@@ -1,4 +1,5 @@
 grid = [[0] * 10000 for _ in range(10000)]
+pre = [[0] * 10001 for _ in range(10001)]
 
 def getGrid(filename):
     with open(filename, 'r') as file:
@@ -10,7 +11,9 @@ def getGrid(filename):
         for _ in range(M):
             x, y, value = map(int, file.readline().strip().split())
             grid[x - 1][y - 1] -= value
-    return grid
+    for i in range(1, 10001):
+        for j in range(1, 10001):
+            pre[i][j] = grid[i - 1][j - 1] + pre[i - 1][j] + pre[i][j - 1] - pre[i - 1][j - 1]
 
 def allPositivesSum():
     ans = 0
@@ -112,40 +115,47 @@ def getOptimalValue(rows):
                 if(j >= 4):
                     dp1[i][j] = max(dp1[i][j], dp2[i - 1][j - 4] + maxes1[i])
 
+            # start = starts1[i - 1]
+            # end = ends1[i - 1]
+            # s = pre[rows*i][end + 1] - pre[rows*(i - 1)][end + 1] - pre[rows*i][start] + pre[rows*(i - 1)][start]
+            # dp1[i][j] = max(dp1[i][j], dp1[i - 1][j] + s)
+
             # dp2
-            if(j >= 12):
-                dp2[i][j] = max(dp2[i][j], dp0[i - 1][j - 12] + maxes1[i] + maxes2[i])
+            if(j >= 10):
+                dp2[i][j] = max(dp2[i][j], dp0[i - 1][j - 10] + maxes1[i] + maxes2[i])
 
             if((starts1[i - 1] == starts1[i]) ^ (ends1[i - 1] == ends1[i])):
-                if(j >= 8):
-                    dp2[i][j] = max(dp2[i][j], dp1[i - 1][j - 8] + maxes1[i] + maxes2[i])
-            elif((starts1[i - 1] == starts1[i]) and (ends1[i - 1] == ends1[i])):
                 if(j >= 6):
                     dp2[i][j] = max(dp2[i][j], dp1[i - 1][j - 6] + maxes1[i] + maxes2[i])
+            elif((starts1[i - 1] == starts1[i]) and (ends1[i - 1] == ends1[i])):
+                if(j >= 4):
+                    dp2[i][j] = max(dp2[i][j], dp1[i - 1][j - 4] + maxes1[i] + maxes2[i])
             else:
-                if(j >= 10):
-                    dp2[i][j] = max(dp2[i][j], dp1[i - 1][j - 10] + maxes1[i] + maxes2[i])
+                if(j >= 8):
+                    dp2[i][j] = max(dp2[i][j], dp1[i - 1][j - 8] + maxes1[i] + maxes2[i])
 
             if((starts1[i - 1] == starts1[i]) ^ (ends1[i - 1] == ends1[i])):
-                if(j >= 8):
-                    dp2[i][j] = max(dp2[i][j], dp2[i - 1][j - 8] + maxes1[i] + maxes2[i])
-            elif((starts1[i - 1] == starts1[i]) and (ends1[i - 1] == ends1[i])):
                 if(j >= 6):
                     dp2[i][j] = max(dp2[i][j], dp2[i - 1][j - 6] + maxes1[i] + maxes2[i])
+            elif((starts1[i - 1] == starts1[i]) and (ends1[i - 1] == ends1[i])):
+                if(j >= 4):
+                    dp2[i][j] = max(dp2[i][j], dp2[i - 1][j - 4] + maxes1[i] + maxes2[i])
             else:
-                if(j >= 10):
-                    dp2[i][j] = max(dp2[i][j], dp2[i - 1][j - 10] + maxes1[i] + maxes2[i])
+                if(j >= 8):
+                    dp2[i][j] = max(dp2[i][j], dp2[i - 1][j - 8] + maxes1[i] + maxes2[i])
             
 
     optimum = max(dp0[divisions - 1][1000], dp1[divisions - 1][1000], dp2[divisions - 1][1000])
     return optimum
 
 if __name__ == "__main__":
-    filename = 'input09.txt'
+    filename = 'input04.txt'
     getGrid(filename)
     ans = getOptimalValue(40)
-    ans = max(ans, getOptimalValue(10))
+    ans1 = getOptimalValue(10)
     totPos = allPositivesSum()
     print(ans)
+    print(ans1)
     print(totPos)
     print((ans/totPos)*100, "%")
+    print((ans1/totPos)*100, "%")
