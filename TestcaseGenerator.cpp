@@ -11,8 +11,8 @@ int main(){
     vector< pair< pair<long long , long long> , long long >> stellars;
     vector< pair< pair<long long , long long> , long long >> mines;
 
-    for( int i = 0; i < 1001; i++ ){ 
-        for (int j = 0; j < 1001; j++)
+    for( int i = 0; i < 201; i++ ){ 
+        for (int j = 0; j < 201; j++)
         {
             if((i+j)%2 == 0) {
                 stellars.push_back({{i , j} , 1});

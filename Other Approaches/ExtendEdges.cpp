@@ -5,7 +5,7 @@ using namespace std;
 long long Grid[10001][10001];
 long long prefix[10001][10001];
 vector<pair<int, vector<int>>> ans;
-
+ 
 struct Edges
 {
     pair<int,int> start;
