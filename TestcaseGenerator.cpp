@@ -21,7 +21,6 @@ int main(){
                 mines.push_back({{i , j} , 1});
             }
         }
-        
     }
 
     cout<<stellars.size()<<endl;
