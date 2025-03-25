@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
-
 typedef pair<double, double> POINT;
 typedef pair<POINT, POINT> EDGE;
 #define epb edgeList.push_back
@@ -39,6 +38,7 @@ void getGrid(const string& filename) {
     }
 }
 
+
 void getGridTranspose(const string& filename) {
     ifstream file(filename);
     if (!file) {
@@ -65,6 +65,18 @@ void getGridTranspose(const string& filename) {
         grid[y][x] -= value;
     }
 }
+
+// int allPositivesSum() {
+//     int ans = 0;
+//     for (int i = 1; i < MAX_SIZE; ++i) {
+//         for (int j = 1; j < MAX_SIZE; ++j) {
+//             if (grid[i][j] > 0) {
+//                 ans = grid[i][j];
+//             }
+//         }
+//     }
+//     return ans;
+// }
 
 int allPositivesSum() {
     int ans = 0;
