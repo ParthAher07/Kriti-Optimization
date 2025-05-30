@@ -1,3 +1,9 @@
+## ABOUT THE PROJECT:
+
+- The task is to construct a polygonal containment field to capture a maximum value of cystals while avoiding void mines as much as possible
+- This is an NP hard problem and we have tried to find an optimal solution using kadane and dynamic programming
+
+
 # Optimization(How to run?)
 
 ## Prerequisites

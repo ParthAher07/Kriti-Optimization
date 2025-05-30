@@ -2,13 +2,12 @@
 using namespace std;
 #define int long long
 
-#define int long long
 typedef pair<double, double> POINT;
 typedef pair<POINT, POINT> EDGE;
 #define epb edgeList.push_back
 #define vpb vertices.push_back
 
-const int MAX_SIZE = 10001;
+const int MAX_SIZE = 1e4+1;
 vector<vector<int>> grid(MAX_SIZE, vector<int>(MAX_SIZE, 0));
 
 void getGrid(const string& filename) {
@@ -24,14 +23,16 @@ void getGrid(const string& filename) {
     }
     int N;
     file >> N;
-    for (int _ = 0; _ < N; ++_) {
+    for (int x1 = 0; x1 < N; x1++) {
+        //crystals
         int x, y, value;
         file >> x >> y >> value;
         grid[x][y] += value;
     }
     int M;
     file >> M;
-    for (int _ = 0; _ < M; ++_) {
+    for (int x1 = 0; x1 < M; x1++) {
+        //void mines
         int x, y, value;
         file >> x >> y >> value;
         grid[x][y] -= value;
@@ -51,14 +52,14 @@ void getGridTranspose(const string& filename) {
     }
     int N;
     file >> N;
-    for (int _ = 0; _ < N; ++_) {
+    for (int x1 = 0; x1 < N; x1++) {
         int x, y, value;
         file >> x >> y >> value;
         grid[y][x] += value;
     }
     int M;
     file >> M;
-    for (int _ = 0; _ < M; ++_) {
+    for (int x1 = 0; x1 < M; x1++) {
         int x, y, value;
         file >> x >> y >> value;
         grid[y][x] -= value;
