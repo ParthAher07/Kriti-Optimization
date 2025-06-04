@@ -1,7 +1,15 @@
 ## ABOUT THE PROJECT:
 
-- The task is to construct a polygonal containment field to capture a maximum value of cystals while avoiding void mines as much as possible
-- This is an NP hard problem and we have tried to find an optimal solution using kadane and dynamic programming
+- The objective of this project is to construct a polygonal containment field that captures the maximum value of crystals on a 2D grid while minimizing the inclusion of void mines.
+
+- This is an NP-Hard optimization problem, and we approach it using efficient heuristics such as:
+
+- Kadane’s Algorithm (extended to 2D for rectangular subregions)
+
+- Dynamic Programming strategies for optimal substructure exploitation
+
+- Our solution aims to provide a near-optimal answer in a reasonable time, balancing performance with accuracy.
+
 
 
 # Optimization(How to run?)
