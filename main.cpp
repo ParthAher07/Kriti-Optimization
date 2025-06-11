@@ -87,23 +87,29 @@ void kadane(const vector<int>& arr, int& start, int& end, int& max_sum) {
 
     for (int i = 0; i < arr.size(); ++i) {
         current_max += arr[i];
+        
+        // Update max_sum and indices if a new maximum is found
         if (current_max > max_sum) {
             max_sum = current_max;
             start = temp_start;
             end = i;
         }
+
+        // Reset current_max if it becomes negative
         if (current_max < 0) {
             current_max = 0;
             temp_start = i + 1;
         }
     }
 
-    if (end == -1) { // All elements were negative
+    // Handle case when all elements are negative
+    if (end == -1) {
         max_sum = -1e8;
         start = 0;
         end = 0;
     }
 }
+
 
 vector<int> starts1, ends1, starts2, ends2, maxes1, maxes2;
 vector<vector<int>> dp0;
