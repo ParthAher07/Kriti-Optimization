@@ -2,7 +2,7 @@
 
 - The objective of this project is to construct a polygonal containment field that captures the maximum value of crystals on a 2D grid while minimizing the inclusion of void mines.
 
-- This is an NP-Hard optimization problem, and we approach it using efficient heuristics such as:
+- This is an NP-Hard optimization problem, and our approach uses efficient heuristics such as:
   - Kadane’s Algorithm (extended to 2D for rectangular subregions)
   - Dynamic Programming strategies for optimal substructure exploitation
   - Our solution aims to provide a near-optimal answer in a reasonable time, balancing performance with accuracy.
@@ -65,4 +65,4 @@ If you encounter errors:
 
 ## Memory Requirements
 
-The program uses large vectors (10000 x 10000), ensure your system has sufficient memory.
+The program uses large vectors (10000 x 10000). Therefore, we recommend you to ensure your system has sufficient memory.
