@@ -65,4 +65,4 @@ If you encounter errors:
 
 ## Memory Requirements
 
-The program uses large vectors (10000 x 10000). Therefore, we recommend you to ensure your system has sufficient memory.
+This program uses large vectors (10000 x 10000). Therefore, we recommend you to ensure your system has sufficient memory available.
