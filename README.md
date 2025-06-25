@@ -44,7 +44,7 @@ The program will:
 1. Read data from all input files
 2. Process the grid data
 3. Generate output in separate output files
-4. Display results in the console
+4. Display the results in the console
 
 ## Input File Format
 Input files must be named as "input00.txt", "input01.txt" and so on.
@@ -61,7 +61,7 @@ Make sure that the input files are in the same directory as the code file
 If you encounter errors:
 1. Check if the input file exists and is correctly formatted
 2. Ensure you have write permissions in the directory (for output files)
-3. Make sure you're using a compatible C++ version
+3. Make sure you are using a compatible C++ version
 
 ## Memory Requirements
 
