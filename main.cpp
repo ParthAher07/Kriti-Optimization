@@ -110,7 +110,6 @@ void kadane(const vector<int>& arr, int& start, int& end, int& max_sum) {
     }
 }
 
-
 vector<int> starts1, ends1, starts2, ends2, maxes1, maxes2;
 vector<vector<int>> dp0;
 vector<vector<int>> dp1;
@@ -436,7 +435,6 @@ vector<EDGE> getEdges(vector<int> selected, int len){
     }
 
     int previndex = initial;
-
     bool iszero = 0;
 
     for(int i = initial+1;i<n;i++){
@@ -459,10 +457,10 @@ vector<EDGE> getEdges(vector<int> selected, int len){
             epb({X,Y});
             epb({X, preStart});
 
-
+            
             if(curr == 2){
 
-                // right side of small block
+                // Right side of small block
                 POINT A = {x+len-1+0.2,starts2[i]-0.6};
                 POINT B = {x+len-1+0.2,ends2[i]+0.6};
                 
@@ -784,6 +782,7 @@ signed main(){
         bool transpose = false;
         getGridTranspose(filename);
 
+
         cout<<endl<< "Transpose grid: "<<endl;
         for(int width : widths){
             starts1.clear();
@@ -869,5 +868,4 @@ signed main(){
 
     return 0;
 }
-
 // END OF CODE
