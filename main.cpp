@@ -845,7 +845,7 @@ signed main(){
 
         cout << "Edges used : " << numEdges << "\n";
 
-        ofstream edgeOut("57_optimization_output0" + (to_string(tc)) + ".txt");
+        ofstream edgeOut("57_optimization_output0" + string(tc < 10 ? "0" : "" ) + (to_string(tc)) + ".txt");
         edgeOut << ans << "\n";
         edgeOut << numEdges << ", " << numEdges << "\n";
         for (int i = 0; i < numEdges; i++)
